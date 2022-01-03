@@ -1,0 +1,15 @@
+{
+  "packages": [
+    {
+      "packageName": "lambda-api",
+      "templateReference": {
+        "templateName": "lambda-api"
+      }
+    }
+  ],
+  "rootTemplateReference": {
+    "templateName": "yarn-pnp-monorepo"
+  },
+  "createdAt": "2022-01-03T22:21:21.281Z",
+  "projectName": "typescript-serverless-api"
+}

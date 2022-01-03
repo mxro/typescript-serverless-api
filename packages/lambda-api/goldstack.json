@@ -1,0 +1,20 @@
+{
+  "$schema": "./schemas/package.schema.json",
+  "name": "lambda-api",
+  "template": "lambda-api",
+  "templateVersion": "0.1.0",
+  "configuration": {},
+  "deployments": [
+    {
+      "name": "prod",
+      "configuration": {
+        "lambdas": {},
+        "lambdaNamePrefix": "serverless-api",
+        "apiDomain": "typescript-serverless-api.examples.dev.goldstack.party",
+        "hostedZoneDomain": "dev.goldstack.party"
+      },
+      "awsUser": "awsUser",
+      "awsRegion": "us-east-2"
+    }
+  ]
+}
