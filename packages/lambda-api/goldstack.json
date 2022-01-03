@@ -8,13 +8,36 @@
     {
       "name": "prod",
       "configuration": {
-        "lambdas": {},
+        "lambdas": {
+          "$default": {
+            "function_name": "serverless-api-default_gateway_lambda_2281"
+          },
+          "ANY /admin/{proxy+}": {
+            "function_name": "serverless-api-admin-_proxy__"
+          },
+          "ANY /cart/{sessionId}/items": {
+            "function_name": "serverless-api-cart-_sessionId_-items"
+          },
+          "ANY /echo": {
+            "function_name": "serverless-api-echo"
+          },
+          "ANY /order/{id}": {
+            "function_name": "serverless-api-order-_id_"
+          },
+          "ANY /user": {
+            "function_name": "serverless-api-user-index_root_lambda_4423"
+          },
+          "ANY /user/{userId}": {
+            "function_name": "serverless-api-user-_userId_"
+          }
+        },
         "lambdaNamePrefix": "serverless-api",
         "apiDomain": "typescript-serverless-api.examples.dev.goldstack.party",
         "hostedZoneDomain": "dev.goldstack.party"
       },
       "awsUser": "awsUser",
-      "awsRegion": "us-east-2"
+      "awsRegion": "us-east-2",
+      "tfStateKey": "lambda-api-prod-0c30ab22320e3a817592.tfstate"
     }
   ]
 }
