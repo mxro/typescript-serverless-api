@@ -12,6 +12,30 @@ A live endpoint for this project is deployed:
 
 [https://typescript-serverless-api.examples.dev.goldstack.party/](https://typescript-serverless-api.examples.dev.goldstack.party/)
 
+Find all routes/handlers defined in [packages/lambda-api/src/routes](https://github.com/mxro/typescript-serverless-api/tree/master/packages/lambda-api/src/routes). See for instance the [{userId}.ts](https://github.com/mxro/typescript-serverless-api/blob/master/packages/lambda-api/src/routes/user/%7BuserId%7D.ts) handler:
+
+```typescript
+import {
+  Handler,
+  APIGatewayProxyEventV2,
+  APIGatewayProxyResultV2,
+} from 'aws-lambda';
+
+type ProxyHandler = Handler<APIGatewayProxyEventV2, APIGatewayProxyResultV2>;
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export const handler: ProxyHandler = async (event, context) => {
+  const userId = event.pathParameters?.['userId'] || 'not specified';
+
+  return {
+    statusCode: 201,
+    body: JSON.stringify({
+      message: `Showing user [${userId}]`,
+    }),
+  };
+};
+```
+
 This project can be cloned in modified to be used for your API. For this, please adapt the configuration in [`goldstack.json`](https://github.com/mxro/typescript-serverless-api/blob/master/packages/lambda-api/goldstack.json) and specifically here the `"api-domain"` and `"hostedZoneDomain"`. Please also delete the line containing `"tfStateKey"`.
 
 You can also use the [Serverless API](https://goldstack.party/templates/lambda-api) template on [Goldstack](https://goldstack.party). This project was created using this template and the Goldstack UI makes it easy to configure the template for your needs.
