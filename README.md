@@ -10,7 +10,7 @@ This starter project provides an example setup for a serverless API implemented 
 
 This project can be cloned in modified to be used for your API. For this, please adapt the configuration in [`goldstack.json`](https://github.com/mxro/typescript-serverless-api/blob/master/packages/lambda-api/goldstack.json) and specifically here the `"api-domain"` and `"hostedZoneDomain"`. Please also delete the line containing `"tfStateKey"`.
 
-You can also use the [Serverless API](https://goldstack.party/templates/lambda-api) template on Goldstack. This project was created using this template and the Goldstack UI makes it easy to configure the template for your needs.
+You can also use the [Serverless API](https://goldstack.party/templates/lambda-api) template on [Goldstack](https://goldstack.party). This project was created using this template and the Goldstack UI makes it easy to configure the template for your needs.
 
 For more information on this project, please also see the blog post [Serverless API with TypeScript on AWS](https://maxrohde.com/2022/01/04/serverless-api-with-typescript-on-aws/).
 
